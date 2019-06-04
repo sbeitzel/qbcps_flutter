@@ -12,20 +12,18 @@ class AccumulatorStream<E, D> {
 
   ConversionCallback<E, D> _convert;
 
-  AccumulatorStream(Iterable<Future<D>> futures, ConversionCallback<E, D> convert) {
+  AccumulatorStream(
+      Iterable<Future<D>> futures, ConversionCallback<E, D> convert) {
     _convert = convert;
 
     Stream.fromFutures(futures).listen((D data) {
-          _elements.add(_convert(data));
-        },
-        onDone: () {
-          _controller.add(_elements);
-          _controller.close();
-        },
-        onError: (error, trace) {
-          _controller.addError(error, trace);
-        }
-    );
+      _elements.add(_convert(data));
+    }, onDone: () {
+      _controller.add(_elements);
+      _controller.close();
+    }, onError: (error, trace) {
+      _controller.addError(error, trace);
+    });
   }
 
   Stream<List<E>> getStream() {
