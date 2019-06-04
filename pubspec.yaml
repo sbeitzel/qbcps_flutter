@@ -1,6 +1,6 @@
 name: qbcps_flutter
-description: A new Flutter package project.
-version: 0.0.2
+description: A collection of utility classes for testing and offline development.
+version: 0.0.3
 author: Stephen Beitzel <sbeitzel@pobox.com>
 homepage: https://github.com/sbeitzel/qbcps_flutter
 

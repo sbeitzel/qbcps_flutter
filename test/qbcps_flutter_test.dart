@@ -9,6 +9,10 @@ main() {
   });
 
   group("AccumulatorStream unit tests", () {});
+
+  group("CircularArray unit tests", () {
+    test("Two element list iterates three times", () { testCircleThreeTimes(); });
+  });
 }
 
 void testChangeSubscription() {
@@ -19,4 +23,13 @@ void testChangeSubscription() {
     print("Received a value on the changeStream: $value");
   });
   db.put("key", "second value");
+}
+
+void testCircleThreeTimes() {
+  CircularArray<int> ra = CircularArray([1,2]);
+  expect(ra.current, 1);
+  ra.moveNext();
+  expect(ra.current, 2);
+  expect(ra.moveNext(), true);
+  expect(ra.current, 1);
 }
