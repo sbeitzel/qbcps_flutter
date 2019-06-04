@@ -1,7 +1,4 @@
 library qbcps_flutter;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'db/map_db.dart';
+export 'stream/accumulator_stream.dart';

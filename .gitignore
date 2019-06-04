@@ -15,3 +15,7 @@ doc/api/
 # IDEA stuff
 .idea
 *.iml
+
+# local flutter stuff
+android/local.properties
+ios/Flutter/Generated.xcconfig
