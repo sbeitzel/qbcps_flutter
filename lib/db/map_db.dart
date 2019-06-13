@@ -32,6 +32,16 @@ class MapDB<K, V> {
     return oldValue;
   }
 
+  /// Removes [key] from the database.
+  ///
+  /// The previous value for [key], if any, is returned. If there was no
+  /// previous value then the return value is `null`.
+  V delete(K key) {
+    V rv = _map.remove(key);
+    _streamController.add(Tuple2<K, V>(key, null));
+    return rv;
+  }
+
   /// Get the value stored at [key] in this database. If there isn't one,
   /// this method will return `null` rather than throw an exception.
   ///
