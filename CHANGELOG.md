@@ -2,6 +2,7 @@
 
 * Added delete method to MapDB. [issue #6](https://github.com/sbeitzel/qbcps_flutter/issues/6)
 * Updated README. [issue #5](https://github.com/sbeitzel/qbcps_flutter/issues/5)
+* Added example code demonstrating MapDB. [issue #2](https://github.com/sbeitzel/qbcps_flutter/issues/2)
 
 ## [0.0.3] - 2019.06.04
 
