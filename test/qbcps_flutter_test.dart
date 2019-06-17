@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:qbcps_flutter/qbcps_flutter.dart';
+import 'package:test/test.dart';
 
 main() {
   group("MapDB unit tests", () {
@@ -27,9 +27,10 @@ void testChangeSubscription() {
 
 void testCircleThreeTimes() {
   CircularArray<int> ra = CircularArray([1,2]);
-  expect(ra.current, 1);
-  ra.moveNext();
-  expect(ra.current, 2);
-  expect(ra.moveNext(), true);
-  expect(ra.current, 1);
+  Iterator<int> circularIterator = ra.iterator;
+  expect(circularIterator.current, 1);
+  circularIterator.moveNext();
+  expect(circularIterator.current, 2);
+  expect(circularIterator.moveNext(), true);
+  expect(circularIterator.current, 1);
 }

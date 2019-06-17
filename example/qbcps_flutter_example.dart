@@ -1,4 +1,4 @@
-import 'package:qbcps_flutter/db/map_db.dart';
+import 'package:qbcps_flutter/qbcps_flutter.dart';
 import 'package:tuple/tuple.dart';
 
 /// Example code showing how to use [MapDB]
