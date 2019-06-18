@@ -1,26 +1,15 @@
 name: qbcps_flutter
 description: A collection of utility classes for testing and offline development.
-version: 0.0.4
+version: 0.1.0
 author: Stephen Beitzel <sbeitzel@pobox.com>
 homepage: https://github.com/sbeitzel/qbcps_flutter
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.2.0 <3.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
-
   tuple: ^1.0.2   # Used by MapDB
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  pedantic: ^1.0.0
   test: ^1.5.0
-
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
-flutter:
-

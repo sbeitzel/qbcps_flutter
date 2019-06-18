@@ -1,3 +1,10 @@
+## [0.1.0] - 2019.06.17
+
+__BREAKING CHANGE__
+* Changed `CircularArray` to be an `Iterable` [issue #7](https://github.com/sbeitzel/qbcps_flutter/issues/7)
+* Changed the layout of the files in the project and changed the project to be
+pure Dart and not depend on Flutter. [issue #8](https://github.com/sbeitzel/qbcps_flutter/issues/8)
+
 ## [0.0.4] - 2019.06.13
 
 * Added delete method to MapDB. [issue #6](https://github.com/sbeitzel/qbcps_flutter/issues/6)
@@ -18,4 +25,3 @@
 * Initial release, with two classes: `MapDB`, an in-memory database that acts a bit like Firebase,
 and `AccumulatorStream`, a stream that performs a transformation on a collection of futures and fires
 an event when they're all done.
-
