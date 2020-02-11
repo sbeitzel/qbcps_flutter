@@ -1,3 +1,7 @@
+## [0.1.1] - 
+
+* Added configuration for continuous integration with FireCI.
+
 ## [0.1.0] - 2019.06.17
 
 __BREAKING CHANGE__

@@ -1,0 +1,8 @@
+.idea
+build
+.packages
+*.iml
+.dart_tool
+.git
+.DS_Store
+pubspec.lock
