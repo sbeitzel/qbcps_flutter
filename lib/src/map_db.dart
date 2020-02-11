@@ -12,13 +12,20 @@ import 'package:tuple/tuple.dart';
 /// has found it convenient for the [Stream] to traffic in [Tuple2] objects,
 /// where the Tuple's first value is the key and the second is the value.
 class MapDB<K, V> {
-  Map<K, V> _map = {};
+  final Map<K, V> _map = {};
   // ignore: close_sinks
-  StreamController<Tuple2<K, V>> _streamController =
+  final StreamController<Tuple2<K, V>> _streamController =
       StreamController<Tuple2<K, V>>.broadcast();
+  // ignore: close_sinks
+  final StreamController<List<V>> _valuesController = StreamController<List<V>>.broadcast();
 
   /// Constructs an empty MapDB.
-  MapDB();
+  MapDB() {
+    _streamController.stream.listen((event) {
+      // the values may have changed
+      _valuesController.add(values().toList(growable: false));
+    });
+  }
 
   /// Inserts (or replaces) [value] at [key] in this database.
   ///
@@ -57,6 +64,12 @@ class MapDB<K, V> {
     return _map.values;
   }
 
+  /// Receive a list of all the values in this database, updated
+  /// whenever the values change.
+  Stream<List<V>> valuesStream() {
+    return _valuesController.stream;
+  }
+
   /// Get the change [Stream] for this database.
   ///
   /// All modifications to the database contents will be emitted by the
@@ -72,7 +85,7 @@ class MapDB<K, V> {
   /// will be sent out on the returned stream.
   Stream<V> getChangesForKey(K key) {
     // ignore: close_sinks
-    StreamController<V> changeController = StreamController();
+    StreamController<V> changeController = StreamController<V>();
     changeController.add(_map[key]);
     changeController
         .addStream(_streamController.stream.where((Tuple2<K, V> tuple) {

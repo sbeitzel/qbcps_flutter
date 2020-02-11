@@ -1,3 +1,8 @@
+## [0.1.1] - 2020.02.11
+
+* Added configuration for continuous integration with FireCI.
+* Added method to MapDB to provide a Stream of all the values
+
 ## [0.1.0] - 2019.06.17
 
 __BREAKING CHANGE__
