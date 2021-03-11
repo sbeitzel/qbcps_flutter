@@ -1,14 +1,13 @@
 name: qbcps_flutter
 description: A collection of utility classes for testing and offline development.
-version: 1.0.0
-author: Stephen Beitzel <sbeitzel@pobox.com>
+version: 1.0.0-nullsafety.0
 homepage: https://github.com/sbeitzel/qbcps_flutter
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  tuple: 2.0.0-nullsafety.0   # Used by MapDB
+  tuple: ^2.0.0-nullsafety.0   # Used by MapDB
 
 dev_dependencies:
   pedantic: ^1.0.0
