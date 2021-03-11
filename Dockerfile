@@ -2,8 +2,8 @@ FROM google/dart
 
 WORKDIR /app
 
-ADD pubspec.yaml /app/
+ADD pubspec.* .
 RUN pub get
-ADD . /app
+COPY . .
 RUN pub get --offline
 RUN pub run test
