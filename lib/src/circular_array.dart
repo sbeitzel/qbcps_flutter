@@ -12,14 +12,14 @@ import 'dart:core';
 /// } while (intIterator.moveNext());
 /// ```
 class CircularArray<E> extends Iterable<E> {
-  List<E> _items = [];
+  final List<E> _items = [];
 
   CircularArray(Iterable<E> items) {
     _items.addAll(items);
   }
 
   @override
-  Iterator<E> get iterator => _CAIterator(this._items);
+  Iterator<E> get iterator => _CAIterator(_items);
 
   @override
   int get length => _items.length;
@@ -41,7 +41,7 @@ class _CAIterator<E> implements Iterator<E> {
     if (_index >= _items.length) {
       _index = 0;
     }
-    if (_index > _items.length -1) {
+    if (_index > _items.length - 1) {
       return false;
     }
     return true;
